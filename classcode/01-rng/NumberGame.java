@@ -1,17 +1,19 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class NumberGame
 {
   public static void main(String[] args) {
       Scanner s = new Scanner(System.in);
+      Random r = new Random();
 
       int mysteryNumber = 5; // place-holder for now
+      int mysteryNumber = r.nextInt(100) + 1; // place-holder for now
 
       System.out.println(mysteryNumber);
 
       System.out.print("Enter your guess: ");
       int playerGuess = s.nextInt();
-
       // if the player guessed incorrectly
       if(playerGuess != mysteryNumber) {
           // if the player guessed too low
@@ -27,7 +29,6 @@ public class NumberGame
       else {
           System.out.println("Correct!!!");
       } // end outer else statement
-
       s.close();
   } // end main method
 } // end class
