@@ -54,7 +54,19 @@ public class UserName {
     System.out.println(rand + " " + c);
 
     // add the char to password
+    password += c; //password = password + c;
+    System.out.println(password);
 
+    rand = (int)(Math.random()*(max - min + 1) + min);
+
+    // convert the random int to char, ex: c =(char)i;
+    c = (char)rand;
+
+    System.out.println(rand + " " + c);
+
+    // add the char to password
+    password += c;
+    System.out.println(password);
 
     return password;
   } // end generatePassword method
