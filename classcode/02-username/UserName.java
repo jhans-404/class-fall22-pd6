@@ -46,28 +46,22 @@ public class UserName {
     // from 33 - 47 for special characters
     int max = 90;
     int min = 65;
-    int rand = (int)(Math.random()*(max - min + 1) + min);
 
-    // convert the random int to char, ex: c =(char)i;
-    char c = (char)rand;
+    for(int i = 0; i < length; i++) {
+      int rand = (int)(Math.random()*(max - min + 1) + min);
 
-    System.out.println(rand + " " + c);
+      // convert the random int to char, ex: c =(char)i;
+      char c = (char)rand;
 
-    // add the char to password
-    password += c; //password = password + c;
+      // System.out.println(rand + " " + c);
+
+      // add the char to password
+      password += c; //password = password + c;
+
+    } // end for loop
+
     System.out.println(password);
-
-    rand = (int)(Math.random()*(max - min + 1) + min);
-
-    // convert the random int to char, ex: c =(char)i;
-    c = (char)rand;
-
-    System.out.println(rand + " " + c);
-
-    // add the char to password
-    password += c;
-    System.out.println(password);
-
+    
     return password;
   } // end generatePassword method
 
