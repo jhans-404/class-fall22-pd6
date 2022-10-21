@@ -5,6 +5,7 @@ public class UserName {
     // create Scanner object
     Scanner s = new Scanner(System.in);
 
+    /*
     // get String input from user
     System.out.print("Enter your first name: ");
     String firstName = s.nextLine();
@@ -13,8 +14,12 @@ public class UserName {
 
     // test output
     System.out.println("Hello " + getInitial(firstName) + "." + getInitial(lastName) + ".");
+    */
 
-    generatePassword(8);
+    System.out.print("How long of a password? ");
+    int len = s.nextInt();
+    
+    generatePassword(len);
 
     s.close();
   } // end main method
@@ -44,10 +49,25 @@ public class UserName {
     // from 65 - 90 CAPITAL letters
     // from 97 - 122 lowercase
     // from 33 - 47 for special characters
-    int max = 90;
-    int min = 65;
+    int min, max;
 
     for(int i = 0; i < length; i++) {
+      int choice = (int)(Math.random() * 3 + 1);
+      if (choice == 1) {
+        min = 65;
+        max = 90;
+      } // capital letters
+
+      else if (choice == 2) {
+        min = 97;
+        max = 122;
+      } // lowercase letters
+
+      else {
+        min = 33;
+        max = 47;
+      } // special character
+
       int rand = (int)(Math.random()*(max - min + 1) + min);
 
       // convert the random int to char, ex: c =(char)i;
@@ -61,7 +81,7 @@ public class UserName {
     } // end for loop
 
     System.out.println(password);
-    
+
     return password;
   } // end generatePassword method
 
