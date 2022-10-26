@@ -7,22 +7,27 @@ public class CoordinatePlane {
 
     System.out.print("Please enter a point in the form (x, y): ");
     // write a statement to store the input
+    point1 = s.nextLine();
 
     // check if the user input the point correctly
     // if yes, continue code
     // if no, get the input again
+    System.out.println(checkInput(point1));
 
     System.out.print("Please enter a second point: ");
     // write a statement to store the input
+    point2 = s.nextLine();
 
     // check if the user input the point correctly
     // if yes, continue code
     // if no, get the input again
-
+    System.out.println(checkInput(point2));
 
     // test your methods below:
+    int x1 = getX(point1);
+    int x2 = getX(point2);
 
-
+    System.out.println(x1 + " " + x2);
   } // end main method
 
   /*
@@ -31,7 +36,19 @@ public class CoordinatePlane {
    * I: String user typed in
    * R: ???
    */
+  public static boolean checkInput(String p) {
+    boolean result = false;
 
+    if (p.indexOf("(") == 0) {
+      if (p.indexOf(", ") != -1) {
+        if (p.indexOf(")") == p.length() - 1) {
+          result = true;
+        }
+      }
+    }
+
+    return result;
+  } // end checkInput method
 
   /*
    * N: getX
